@@ -1,0 +1,109 @@
+﻿body{background:#911;font-family:Georgia, Times, Serif;font-size:12pt;}
+h1,h2,h3,h4{font-weight:normal;margin-bottom:0.8em;}
+
+h1{font-size:2.0em;line-height:0.6em;}
+h2{font-size:2.2em;}
+h3{font-size:1.2em;font-style:italic;}
+h4{font-size:1.2em;}
+a{text-decoration:none;}
+#container{position:relative;margin-top:30px;padding-top:10px;background:#fff;}
+
+.form{border:solid #ccc;border-width:1px 0 1px;padding:20px 0;margin:60px 0 60px;}
+
+.form .field-poly,
+.form .field-text,
+.form .field-drop,
+.form .field-flow,
+.form .field-repeat,
+.form .field-no-label,
+.form .field{padding:15px 0;border-top:solid 1px #ececec;}
+
+.form select,
+.form textarea,
+.form input{
+	padding:3px;
+	border-radius: 8px;-moz-border-radius:3px;-webkit-border-radius:3px;
+	background:linear-gradient(#ddd, #fff);-pie-background:linear-gradient(#ddd, #fff);
+	background:-moz-linear-gradient(top, #ddd 0%,#fff 15%);
+	background:-webkit-gradient(linear, top, bottom, color-stop(0, #ddd),color-stop(0.15, #fff));
+	border-top:solid 1px #aaa;border-left:solid 1px #aaa;border-right:solid 1px #ddd;border-bottom:solid 1px #ddd;
+}
+
+
+/* form */
+.form .field-poly,
+.form .field-text,
+.form .field-drop,
+.form .field-flow,
+.form .field-repeat,
+.form .field-no-label,
+.form .field{margin-bottom:5px;clear:both;position:relative;}
+.form .field-text{margin-bottom:8px;}
+
+/* labels */
+.form .field-poly label,
+.form .field-text label,
+.form .field-flow label,
+.form .field-repeat label,
+.form .field label{display:block;width:150px;float:left;}
+
+/* flow */
+.form .field-flow label{position:absolute;}
+.form .field-flow .options{display:block;margin-left:150px;}
+.form .field-flow .options input{display:inline;}
+.form .field-flow .options label{display:inline;display:inline-block;position:relative;width:auto;margin-right:10px;float:none;text-align:left;}
+
+/* repeat */
+.form .field-repeat label{position:absolute;}
+.form .field-repeat .options{display:block;margin-left:150px;}
+.form .field-repeat .options input{clear:left;display:block;margin-bottom:5px;float:left;}
+.form .field-repeat .options label{display:block;position:relative;width:auto;margin-bottom:3px;text-align:left;}
+.form .field-repeat:after{clear:both;content:' ';display:block;font-size:0;line-height:0;visibility:hidden;width:0;height:0;}
+.form .field-repeat{display:block;}
+* html .form .field-repeat{height:1%;}
+
+/* no-label */
+.form .field-no-label .content{margin-left:150px;}
+
+/* right-align-label */
+.form .l-right label{text-align:right;width:140px;margin-right:10px;}
+
+/* poly */
+.form .field-poly label{position:absolute;}
+.form .field-poly .content{margin-left:150px;}
+.form .field-poly .content span,
+.form .field-poly .content text-area,
+.form .field-poly .content select,
+.form .field-poly .content input{display:block;margin-bottom:5px;}
+.form .field-poly .content span{margin-bottom:8px;}
+
+/* label widths */
+.form .lw-300 label{width:300px;}
+.form .lw-300 .options{margin-left:300px;}
+.form .lw-300 .content{margin-left:300px;}
+
+.form .lw-250 label{width:250px;}
+.form .lw-250 .options{margin-left:250px;}
+.form .lw-250 .content{margin-left:250px;}
+
+/* input widths */
+.form .iw-70 input,
+.form .iw-70 textarea{width:70px;}
+.form .iw-70 select{width:74px;}
+
+.form .iw-100 input,
+.form .iw-100 textarea{width:100px;}
+.form .iw-100 select{width:104px;}
+
+.form .iw-200 input,
+.form .iw-200 textarea{width:200px;}
+.form .iw-200 select{width:204px;}
+
+.form .iw-300 input,
+.form .iw-300 textarea{width:300px;}
+.form .iw-300 select{width:304px;}
+
+/* drop */
+.form .field-drop label{display:block;position:relative;float:none;margin-bottom:5px;}
+.form .field-drop .options,
+.form .field-drop .content{margin-left:0;}

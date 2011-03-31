@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style type="text/css">
+        /* reset */
+        html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outline:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+        /* 960 grid */
+        .container_10{padding-left:5px;padding-right:5px;margin-left:auto;margin-right:auto;width:970px;}.grid,.grid_1,.grid_2,.grid_3,.grid_4,.grid_5,.grid_6,.grid_7,.grid_8,.grid_9,.grid_10{display:inline;float:left;position:relative;margin-left:5px;margin-right:5px;}.alpha{margin-left:0;}.omega{margin-right:0;}.container_10 .grid_1{width:87px;}.container_10 .grid_2{width:184px;}.container_10 .grid_3{width:281px;}.container_10 .grid_4{width:378px;}.container_10 .grid_5{width:475px;}.container_10 .grid_6{width:572px;}.container_10 .grid_7{width:669px;}.container_10 .grid_8{width:766px;}.container_10 .grid_9{width:863px;}.container_10 .grid_10{width:960px;}.container_10 .prefix_1{padding-left:97px;}.container_10 .prefix_2{padding-left:194px;}.container_10 .prefix_3{padding-left:291px;}.container_10 .prefix_4{padding-left:388px;}.container_10 .prefix_5{padding-left:485px;}.container_10 .prefix_6{padding-left:582px;}.container_10 .prefix_7{padding-left:679px;}.container_10 .prefix_8{padding-left:776px;}.container_10 .prefix_9{padding-left:873px;}.container_10 .suffix_1{padding-right:97px;}.container_10 .suffix_2{padding-right:194px;}.container_10 .suffix_3{padding-right:291px;}.container_10 .suffix_4{padding-right:388px;}.container_10 .suffix_5{padding-right:485px;}.container_10 .suffix_6{padding-right:582px;}.container_10 .suffix_7{padding-right:679px;}.container_10 .suffix_8{padding-right:776px;}.container_10 .suffix_9{padding-right:873px;}.container_10 .push_1{left:97px;}.container_10 .push_2{left:194px;}.container_10 .push_3{left:291px;}.container_10 .push_4{left:388px;}.container_10 .push_5{left:485px;}.container_10 .push_6{left:582px;}.container_10 .push_7{left:679px;}.container_10 .push_8{left:776px;}.container_10 .push_9{left:873px;}.container_10 .pull_1{left:-97px;}.container_10 .pull_2{left:-194px;}.container_10 .pull_3{left:-291px;}.container_10 .pull_4{left:-388px;}.container_10 .pull_5{left:-485px;}.container_10 .pull_6{left:-582px;}.container_10 .pull_7{left:-679px;}.container_10 .pull_8{left:-776px;}.container_10 .pull_9{left:-873px;}.clear{clear:both;display:block;overflow:hidden;visibility:hidden;width:0;height:0;}.clearfix:after{clear:both;content:' ';display:block;font-size:0;line-height:0;visibility:hidden;width:0;height:0;}.clearfix{display:block;}* html .clearfix{height:1%;}
+        /* Copyright (c) 2009, Yahoo! Inc. All rights reserved. Code licensed under the BSD License: http://developer.yahoo.net/yui/license.txt version: 2.8.0r4*/
+        body{font:13px/1.231 arial,helvetica,clean,sans-serif;*font-size:small;*font:x-small;}select,input,textarea,button{font:99% arial,helvetica,clean,sans-serif;}table{font-size:inherit;font:100%;}pre,code,kbd,samp,tt{font-family:monospace;*font-size:108%;line-height:100%;}
+    
+        /* specific to page **********************/
+        body{background:#911;font-family:Georgia, Times, Serif;font-size:12pt;}
+        h1{font-size:2.0em;line-height:0.6em;font-weight:normal;margin-bottom:0.8em;}
+        #container{position:relative;margin-top:30px;padding-top:10px;background:#fff;}
+        .form{border:solid #ccc;border-width:1px 0 1px;padding:20px 0;margin:60px 0 60px;}
+        .form .field-poly,
+        .form .field-text,
+        .form .field-drop,
+        .form .field-flow,
+        .form .field-repeat,
+        .form .field-no-label,
+        .form .field{padding:15px 0;border-top:solid 1px #ececec;}
+        /*****************************************/
+
+
+        /* css below replicated in web **********************/
+        
+        /* form input */
+        .form select,
+        .form textarea,
+        .form input{
+	        padding:3px;
+	        border-radius: 8px;-moz-border-radius:3px;-webkit-border-radius:3px;
+	        background:linear-gradient(#ddd, #fff);-pie-background:linear-gradient(#ddd, #fff);
+	        background:-moz-linear-gradient(top, #ddd 0%,#fff 15%);
+	        background:-webkit-gradient(linear, top, bottom, color-stop(0, #ddd),color-stop(0.15, #fff));
+	        border-top:solid 1px #aaa;border-left:solid 1px #aaa;border-right:solid 1px #ddd;border-bottom:solid 1px #ddd;}
+	    
+        /* form */
+        .form .field-poly,
+        .form .field-text,
+        .form .field-drop,
+        .form .field-flow,
+        .form .field-repeat,
+        .form .field-no-label,
+        .form .field{margin-bottom:5px;clear:both;position:relative;}
+        .form .field-text{margin-bottom:10px;}
+
+        /* labels */
+        .form .field-poly label,
+        .form .field-text label,
+        .form .field-flow label,
+        .form .field-repeat label,
+        .form .field label{display:block;float:left;}
+        
+        /* default width */
+        .form .field-text label,
+        .form .field label{width:150px;}
+        .form .content{margin-left:150px;}
+        .form .options{margin-left:150px;}
+        .form .options br{display:none;}
+        
+        /* right-align-label */
+        .form .l-right label{text-align:right;width:140px;margin-right:10px;}
+        
+        /* flow */
+        .form .field-flow label{position:absolute;}
+        .form .field-flow .options{display:block;}
+        .form .field-flow .options input{display:inline;}
+        .form .field-flow .options label{display:inline;display:inline-block;position:relative;width:auto;margin-right:10px;float:none;text-align:left;}
+
+        /* repeat */
+        .form .field-repeat label{position:absolute;}
+        .form .field-repeat .options{display:block;}
+        .form .field-repeat .options input{clear:left;display:block;margin-bottom:5px;float:left;}
+        .form .field-repeat .options label{display:block;position:relative;width:auto;margin-bottom:5px;text-align:left;}
+        .form .field-repeat:after{clear:both;content:' ';display:block;font-size:0;line-height:0;visibility:hidden;width:0;height:0;}
+        .form .field-repeat{display:block;}
+        * html .form .field-repeat{height:1%;}
+        
+        /* poly */
+        .form .field-poly label{position:absolute;}
+        .form .field-poly .content a,
+        .form .field-poly .content label,
+        .form .field-poly .content span,
+        .form .field-poly .content text-area,
+        .form .field-poly .content select,
+        .form .field-poly .content input{display:block;margin-bottom:5px;}
+        .form .field-poly .content a,
+        .form .field-poly .content label,
+        .form .field-poly .content span{margin-bottom:8px;}
+
+        /* label widths */
+        .form .lw-300 label{width:300px;}
+        .form .lw-300 .options{margin-left:300px;}
+        .form .lw-300 .content{margin-left:300px;}
+
+        .form .lw-250 label{width:250px;}
+        .form .lw-250 .options{margin-left:250px;}
+        .form .lw-250 .content{margin-left:250px;}
+
+        /* input widths */
+        .form .iw-70 input,
+        .form .iw-70 textarea{width:70px;}
+        .form .iw-70 select{width:74px;}
+
+        .form .iw-100 input,
+        .form .iw-100 textarea{width:100px;}
+        .form .iw-100 select{width:104px;}
+
+        .form .iw-200 input,
+        .form .iw-200 textarea{width:200px;}
+        .form .iw-200 select{width:204px;}
+
+        .form .iw-300 input,
+        .form .iw-300 textarea{width:300px;}
+        .form .iw-300 select{width:304px;}
+
+        /* drop */
+        .form .field-drop label{display:block;position:relative;float:none;margin-bottom:5px;}
+        .form .field-drop .options,
+        .form .field-drop .content{margin-left:0;}
+        
+        /* highlight */
+        .form .highlight .content{padding:5px;background-color:#ff9;}
+        
+        /* disabled */
+        .form .disabled select,
+        .form .disabled textarea,
+        .form .disabled input{color:#000;background:#ddd;}
+        /*****************************************/
+
+        
+    </style>
+</head>
+<body>
+
+<div class="container_10 clearfix" style="background-color:#fff;">
+    <div class="prefix_2 grid_6">
+    
+
+        <div class="form">
+
+            <h1>form</h1>
+        
+            <div class="field-text">
+                <label>field-text</label>
+                <span>span span span</span>
+            </div>
+
+            <div class="field">
+                <label>field</label>
+                <input type="text" />
+            </div>
+            
+            <div class="field">
+                <label>field</label>
+                <select>
+                    <option>one something</option>
+                    <option>two something</option>
+                    <option>three something</option>
+                </select>
+            </div>
+            
+            <div class="field">
+                <label>field</label>
+                <textarea cols="18" rows="3"></textarea>
+            </div>
+            
+            <div class="field iw-70">
+                <label>field iw-70</label>
+                <select>
+                    <option>one</option>
+                    <option>two</option>
+                    <option>three</option>
+                </select>
+                <select>
+                    <option>one</option>
+                    <option>two</option>
+                    <option>three</option>
+                </select>
+            </div>
+            
+            <div class="field iw-70">
+                <label>field iw-70</label>
+                <input type="text" />
+                <a href="#">link</a>
+            </div>
+            
+            <div class="field-no-label field-text">
+                <div class="content">
+                    <span>field-no-label field-text</span>
+                </div>
+            </div>
+
+            <div class="field-no-label">
+                <div class="content">
+                    <input type="text" value="field-no-label" />
+                    <a href="#">link</a>
+                </div>
+            </div>
+            
+            <div class="field-flow">
+                <label>field-flow</label>
+                <span class="options">
+                    <input type="checkbox" />
+                    <label>wefwef</label>
+                    <input type="checkbox" />
+                    <label>wefwef</label>
+                    <input type="checkbox" />
+                    <label>wefwef</label>
+                    <input type="checkbox" />
+                    <label>wefwef</label>
+                </span>
+            </div>
+            
+            <div class="field-repeat">
+                <label>field-repeat</label>
+                <span class="options">
+                    <input type="radio" name="repeat" />
+                    <label>wefwef</label>
+                    <input type="radio" name="repeat" />
+                    <label>wefwef</label>
+                    <input type="radio" name="repeat" />
+                    <label>wefwef</label>
+                    <input type="radio" name="repeat" />
+                    <label>wefwef</label>
+                </span>
+            </div>
+            
+            <div class="field-text l-right">
+                <label>field-text l-right</label>
+                <span>span span span</span>
+            </div>
+
+            <div class="field l-right">
+                <label>field l-right</label>
+                <input type="text" />
+            </div>
+            
+            <div class="field-flow l-right">
+                <label>field-flow l-right</label>
+                <span class="options">
+                    <input type="checkbox" />
+                    <label>wefwef</label>
+                    <input type="checkbox" />
+                    <label>wefwef</label>
+                    <input type="checkbox" />
+                    <label>wefwef</label>
+                    <input type="checkbox" />
+                    <label>wefwef</label>
+                </span>
+            </div>
+
+            <div class="field-poly">
+                <label>field-poly</label>
+                <div class="content">
+                    <input type="text" />
+                    <span>span span span</span>
+                    <select>
+                        <option>one something</option>
+                        <option>two something</option>
+                        <option>three something</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="field-poly iw-200">
+                <label>field-poly iw-200</label>
+                <div class="content">
+                    <select>
+                        <option>one something</option>
+                        <option>two something</option>
+                        <option>three something</option>
+                    </select>
+                    <textarea cols="18" rows="3"></textarea>
+                </div>
+            </div>
+
+            <div class="field-poly field-repeat l-right">
+                <label>field-poly<br />field-repeat<br />l-right</label>
+                <div class="content">
+                    <input type="text" />
+                </div>
+                <div class="options">
+                    <input type="radio" name="repeat" />
+                    <label>wefwef</label>
+                    <input type="radio" name="repeat" />
+                    <label>wefwef</label>
+                    <input type="radio" name="repeat" />
+                    <label>wefwef</label>
+                    <input type="radio" name="repeat" />
+                    <label>wefwef</label>
+                </div>
+            </div>
+            
+            <div class="field lw-300">
+                <label>field lw-300</label>
+                <input type="text" />
+            </div>
+            
+            <div class="field-poly lw-300">
+                <label>field-poly lw-300</label>
+                <div class="content">
+                    <input type="text" />
+                    <span>span span span</span>
+                    <select>
+                        <option>one something</option>
+                        <option>two something</option>
+                        <option>three something</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="field iw-70 lw-300">
+                <label>field iw-70 lw-300</label>
+                <input type="text" />
+            </div>
+
+            <div class="field-poly field-repeat lw-300">
+                <label>field-poly field-repeat lw-300</label>
+                <div class="content">
+                    <input type="text" />
+                </div>
+                <div class="options">
+                    <input type="radio" name="repeat" />
+                    <label>wefwef</label>
+                    <input type="radio" name="repeat" />
+                    <label>wefwef</label>
+                    <input type="radio" name="repeat" />
+                    <label>wefwef</label>
+                    <input type="radio" name="repeat" />
+                    <label>wefwef</label>
+                </div>
+            </div>
+
+            <div class="field-drop">
+                <label>field-drop</label>
+                <input type="text" />
+                <a href="#">link</a>
+            </div>
+
+            <div class="field-drop iw-300">
+                <label>field-drop iw-300</label>
+                <select>
+                    <option>one something</option>
+                    <option>two something</option>
+                    <option>three something</option>
+                </select>
+            </div>
+
+            <div class="field-drop field-repeat">
+                <label>field-drop field-repeat</label>
+                <div class="options">
+                    <input type="radio" name="repeat" />
+                    <label>wefwef</label>
+                    <input type="radio" name="repeat" />
+                    <label>wefwef</label>
+                    <input type="radio" name="repeat" />
+                    <label>wefwef</label>
+                    <input type="radio" name="repeat" />
+                    <label>wefwef</label>
+                </div>
+            </div>
+            
+            <div class="field-drop field-poly iw-100 lw-300">
+                <label>field-drop field-poly iw-100 lw-300</label>
+                <div class="content">
+                    <input type="text" />
+                    <span>span span span</span>
+                    <select>
+                        <option>one</option>
+                        <option>two</option>
+                        <option>three</option>
+                    </select>
+                </div>
+            </div>
+                        
+            <div class="field-no-label highlight">
+                <div class="content">
+                    <span>field-no-label highlight</span>
+                </div>
+            </div>
+            
+            <div class="field disabled">
+                <label>field disabled</label>
+                <input type="text" />
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>
